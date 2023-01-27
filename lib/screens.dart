@@ -7,6 +7,7 @@ import 'package:intern_project/log.dart';
 import 'package:intern_project/timelog.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -33,32 +34,37 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.black87,
             ),
             backgroundColor: Colors.white,
-            title: const Text(
+            title: Text(
               'Prescription',
-              style: TextStyle(fontSize: 28, color: Colors.black),
+              style: TextStyle(fontSize: 2.8.h, color: Colors.black),
             ),
             bottom: TabBar(
+              
               unselectedLabelColor: Colors.black,
               indicatorColor: Colors.blue,
               labelStyle: const TextStyle(fontSize: 30),
               labelColor: Colors.blue.shade900,
               tabs: [
-                const Tab(
+                
+                Tab(
                   child: Text(
                     'Cycle',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    style:
+                        TextStyle(fontSize: 2.h, fontWeight: FontWeight.w600),
                   ),
                 ),
-                const Tab(
+                Tab(
                   child: Text(
                     'Timelog',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    style:
+                        TextStyle(fontSize: 2.h, fontWeight: FontWeight.w600),
                   ),
                 ),
-                const Tab(
+                Tab(
                   child: Text(
                     'Log',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    style:
+                        TextStyle(fontSize: 2.h, fontWeight: FontWeight.w600),
                   ),
                 )
               ],

@@ -1,60 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:intern_project/Widget/Mood.dart';
+import 'package:intern_project/Widget/Symptoms.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:flutter_emoji/flutter_emoji.dart';
 
 class cycle extends StatefulWidget {
   const cycle({super.key});
-
   @override
   State<cycle> createState() => _cycleState();
 }
 
-class CardItem {
-  final String urlImage;
-  final String title;
-  CardItem({
-    required this.urlImage,
-    required this.title,
-  });
-}
-
 class _cycleState extends State<cycle> {
-  List<CardItem> items = [
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-    CardItem(
-        urlImage:
-            'https://tse3.mm.bing.net/th?id=OIP.CBGKfEl9mFQ7Yp7qzSKpZQHaHa&pid=Api&P=0',
-        title: 'Calm'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -67,9 +25,7 @@ class _cycleState extends State<cycle> {
             width: 200,
             decoration: BoxDecoration(
                 color: Color.fromARGB(246, 205, 215, 245),
-                borderRadius: BorderRadius.circular(100)
-                //more than 50% of width makes circle
-                ),
+                borderRadius: BorderRadius.circular(100)),
             child: Padding(
               padding: const EdgeInsets.only(top: 36),
               child: Column(
@@ -115,157 +71,100 @@ class _cycleState extends State<cycle> {
           endIndent: 35,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 35, right: 35, top: 15),
+          padding: const EdgeInsets.only(left: 8, right: 8, top: 15),
           child: Container(
-            //height: double.infinity,
-            //width: double.infinity,
-
-            decoration:
-                BoxDecoration(color: Color.fromARGB(248, 212, 255, 255)),
+            decoration: BoxDecoration(
+                color: Color.fromARGB(248, 212, 255, 255),
+                borderRadius: BorderRadius.circular(12)),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Column(children: [
+                Row(
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
-                            CircleAvatar(
-                              backgroundColor: Colors.red,
-                              radius: 5,
-                            ),
-                            Text(
-                              'Periods',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            //SizedBox(width: ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CircleAvatar(
-                              radius: 5,
-                              backgroundColor: Colors.blue.shade900,
-                            ),
-                            Text(
-                              'Ovulation',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ],
+                    CircleAvatar(
+                      backgroundColor: Colors.red,
+                      radius: 5,
                     ),
                     SizedBox(
-                      width: 25,
+                      width: 4.w,
                     ),
-                    Column(
+                    Text(
+                      'Periods',
+                      style: TextStyle(
+                        fontSize: 2.h,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 28.w,
+                    ),
+                    CircleAvatar(
+                      radius: 5,
+                      backgroundColor: Colors.blue.shade900,
+                    ),
+                    SizedBox(
+                      width: 4.w,
+                    ),
+                    Text(
+                      'Ovulation',
+                      style: TextStyle(
+                        fontSize: 2.h,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 14,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
-                            CircleAvatar(
-                              radius: 5,
-                              backgroundColor: Colors.blue,
-                            ),
-                            Text(
-                              'Expected period',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
+                        CircleAvatar(
+                          radius: 5,
+                          backgroundColor: Colors.blue,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
-                            CircleAvatar(
-                              backgroundColor: Colors.white70,
-                              radius: 5,
-                            ),
-                            Text(
-                              'Fertile',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            // SizedBox(width: 65),
-                          ],
+                        SizedBox(
+                          width: 4.w,
+                        ),
+                        Text(
+                          'Expected period',
+                          style: TextStyle(fontSize: 2.h),
                         )
                       ],
                     ),
-                  ]),
+                    SizedBox(
+                      width: 13.8.w,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 5,
+                        ),
+                        SizedBox(
+                          width: 4.w,
+                        ),
+                        Text(
+                          'Fertile',
+                          style: TextStyle(
+                            fontSize: 2.h,
+                          ),
+                        ),
+                        // SizedBox(width: 65),
+                      ],
+                    )
+                  ],
+                ),
+              ]),
             ),
           ),
         ),
         SizedBox(height: 25),
-        Padding(
-          padding: const EdgeInsets.only(left: 35),
-          child: Container(
-            alignment: Alignment.topLeft,
-            child: Text(
-              'Mood',
-              style: TextStyle(fontSize: 20),
-              textAlign: TextAlign.left,
-            ),
-          ),
-        ),
-        //SizedBox(height: 1),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            height: 120,
-            color: Color.fromARGB(255, 230, 233, 234),
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: 8,
-              separatorBuilder: (context, _) => SizedBox(
-                  //width: ,
-                  ),
-              itemBuilder: (context, index) => BuildCard(item: items[index]),
-            ),
-          ),
-        ),
+        Mood(),
+        SYmptoms(),
       ]),
     );
   }
-
-  Widget BuildCard({
-    required CardItem item,
-  }) =>
-      Container(
-        width: 100,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      item.urlImage,
-                      fit: BoxFit.fill,
-                      // fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                item.title,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              )
-            ],
-          ),
-        ),
-      );
 }
