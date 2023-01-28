@@ -2,16 +2,16 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intern_project/cycle.dart';
-import 'package:intern_project/log.dart';
-import 'package:intern_project/timelog.dart';
+import 'package:intern_project/Screens/cycle.dart';
+import 'package:intern_project/Screens/log.dart';
+import 'package:intern_project/Screens/timelog.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
+  
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

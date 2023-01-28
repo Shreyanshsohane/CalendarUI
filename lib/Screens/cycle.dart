@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intern_project/Widget/Mood.dart';
 import 'package:intern_project/Widget/Symptoms.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:flutter_emoji/flutter_emoji.dart';
 
 class cycle extends StatefulWidget {
   const cycle({super.key});
