@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intern_project/Screens/ForgetPasswordPhone.dart';
 import 'package:intern_project/Screens/SignUp_page.dart';
+import 'package:intern_project/screens.dart';
 import 'package:typicons_flutter/typicons_flutter.dart';
 
 class LoginPage extends StatefulWidget {
@@ -15,11 +16,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  /*
   final _auth = FirebaseAuth.instance;
   String email = '';
   String password = '';
-  */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextField(
                         keyboardType: TextInputType.emailAddress,
                         onChanged: (value) {
-                          //  email = value;
+                          email = value;
                         },
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextField(
                         obscureText: true,
                         onChanged: (value) {
-                          // password = value;
+                          password = value;
                         },
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
@@ -219,17 +219,17 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor: Colors.black,
                               side: BorderSide(width: 2000)),
                           onPressed: () async {
-                            /*
-                            ;
-                            final user = await _auth.signInWithEmailAndPassword(
-                                email: email, password: password);
-                            if (user != null) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => members())));
-                            }
-                            */
+                            try {
+                              final User =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              if (User != null) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MyHomePage()));
+                              }
+                            } catch (e) {}
                           },
                           child: Text(
                             'Login',
